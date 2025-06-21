@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+  <title>Currículo - Osmar Sampaio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset e estilos base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    
+    .container {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    :root {
+      --text: #333;
+      --light-gray: #f5f5f5;
+      --white: #fff;
+      --black: #000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light-gray);
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    header {
+      background: #f5f5f5;
+      color: #333;
+      padding: 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      transform: translate(30%, -30%);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .title, .location {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      fill: #666;
+    }
+
+    main {
+      padding: 3rem 4rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #333;
+      margin: 1.5rem 0 0.8rem 0;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .experience-item, .education-item {
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid #eee;
+      padding-bottom: 1.5rem;
+    }
+
+    .experience-item:last-child, .education-item:last-child {
+      border-left-color: transparent;
+    }
+
+    .job-title, .degree {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .company, .institution {
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .date {
+      color: #666;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.8rem 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-category {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .skill-category h4 {
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: var(--light-gray);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      color: var(--text);
+      margin: 0.1rem;
+    }
+
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .language {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .language span:last-child {
+      margin-left: 0.5rem;
+      color: #666;
+      font-size: 0.75rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background-color: #f0f0f0;
+      border-radius: 2px;
+      margin: 0.2rem 0;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #666;
+      border-radius: 2px;
+    }
+
+    .portuguese { width: 100%; }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 5mm 10mm 5mm 10mm;
+      }
+      
+      body {
+        font-size: 9pt;
+        line-height: 1.2;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+      
+      header {
+        padding: 1rem 1.5rem;
+        margin: 0 0 0.5rem 0;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      h1 {
+        font-size: 16pt !important;
+        margin-bottom: 0.2rem !important;
+        color: #000 !important;
+      }
+      
+      .title, .location {
+        font-size: 10pt !important;
+        margin-bottom: 0.2rem !important;
+      }
+      
+      .contact-info {
+        margin-top: 0.3rem !important;
+        gap: 0.8rem !important;
+      }
+      
+      .contact-item {
+        font-size: 7.5pt !important;
+      }
+      
+      main {
+        padding: 0 1.5rem 0.5rem;
+        max-width: 100%;
+      }
+      
+      section {
+        margin-bottom: 0.5rem;
+        page-break-inside: avoid;
+      }
+      
+      h2 {
+        font-size: 10pt !important;
+        margin: 1.5mm 0 1mm 0 !important;
+        color: #333 !important;
+        border-bottom: 0.5px solid #eee;
+        padding-bottom: 0.5mm;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      
+      .skills-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem !important;
+        margin: 0.2rem 0 0.5rem 0 !important;
+      }
+      
+      .skill-category {
+        margin-bottom: 0.3rem !important;
+      }
+      
+      .skill-category h4 {
+        margin-bottom: 0.1rem !important;
+        font-size: 7.5pt !important;
+      }
+      
+      .skill-tag {
+        font-size: 6.5pt !important;
+        padding: 0.1rem 0.3rem !important;
+        margin: 0.05rem !important;
+        line-height: 1.1;
+      }
+      
+      .languages {
+        gap: 0.3rem !important;
+      }
+      
+      .language {
+        font-size: 7.5pt !important;
+        margin-bottom: 0.1rem !important;
+      }
+      
+      .progress-bar {
+        height: 2px !important;
+        margin: 0.1rem 0 0.2rem 0 !important;
+      }
+      
+      p, li {
+        font-size: 8pt !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.2rem !important;
+      }
+      
+      h3 {
+        font-size: 9pt !important;
+        margin-bottom: 0.2rem !important;
+      }
+      
+      .date {
+        font-size: 7pt !important;
+        margin-bottom: 0.1rem !important;
+      }
+      
+      .experience-item, .education-item {
+        margin-bottom: 0.6rem !important;
+        padding-bottom: 0.4rem !important;
+        border-bottom: 0.5px solid #eee !important;
+      }
+      
+      .experience-item:last-child, .education-item:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0.3rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>Osmar Sampaio</h1>
+        <p class="title">Desenvolvedor Full Stack</p>
+        <p class="location">Carnaubal, Ceará</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:softwareneto@outlook.com">softwareneto@outlook.com</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M16.75 13.96c.25.13.41.2.46.27.06.07.12.19.06.31-.06.12-.09.21-.18.33l-.18.2c-.1.1-.27.25-.47.4-.38.3-.84.65-1.21.7-.13.02-.23.01-.33-.02-.1-.03-.23-.05-.38-.1-.38-.1-.8-.25-1.34-.48-2.12-.87-3.5-2.18-4.4-3.28-.9-1.1-1.3-1.9-1.45-2.22-.12-.32-.16-.44-.16-.62 0-.18.02-.27.03-.29.02-.02.05-.04.1-.04.1 0 .2.06.29.12l.65.43c.07.05.12.1.16.15.05.05.09.11.12.18.03.07.03.18 0 .29-.02.11-.17.5-.35 1.02-.19.52-.3.73-.34.8-.04.09-.08.18-.13.24-.04.07-.09.15-.14.2-.05.06-.1.12-.16.17-.06.05-.12.09-.18.13-.07.04-.12.07-.2.07-.07 0-.16-.03-.26-.08-.1-.05-.22-.12-.36-.22s-.3-.24-.5-.47c-.2-.23-.35-.39-.45-.5-.1-.11-.2-.24-.3-.39-.1-.15-.02-.28.08-.38.08-.08.17-.21.27-.34.1-.13.13-.22.2-.35.07-.13.04-.25-.02-.35-.05-.1-.45-1.08-.62-1.47-.16-.4-.33-.34-.45-.35-.11-.01-.24-.01-.37-.01-.13 0-.34.05-.52.24-.18.19-.69.67-.69 1.64 0 .97.71 1.9.81 2.03.1.13 1.4 2.34 3.4 3.28 2 .94 2 .63 2.36.59.36-.04 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.09-.2-.14-.43-.24m-2.98.13c-.16.05-.34.12-.52.17-.08.02-.15.03-.23.03-.26 0-.37-.08-.54-.26-.17-.19-.64-.63-.78-.76-.14-.13-.29-.14-.42-.14-.12 0-.25.04-.36.12-.11.08-.42.35-.42.85 0 .5.36.98.41 1.04.05.06.64.98 1.56 1.54.28.17.5.28.67.36.17.09.36.18.55.24.19.06.36.09.52.09.21 0 .41-.05.61-.16.2-.1.44-.32.6-.6.16-.28.36-.82.4-1.06.04-.24.01-.37-.02-.47-.04-.1-.17-.15-.32-.2m8.23-5.15A9.96 9.96 0 0012 2a9.92 9.92 0 00-7.07 2.93A9.92 9.92 0 002 12c0 2.72 1.04 5.21 2.77 7.06L2 22l5.5-1.38A9.95 9.95 0 0012 22c5.52 0 10-4.48 10-10 0-2.65-1.03-5.14-2.9-7.01m-1.77 15.13A8.44 8.44 0 0112 20.5c-2.2 0-4.2-.84-5.71-2.21l-.4-.34-3.76.99 1-3.66-.24-.39A8.44 8.44 0 013.5 12c0-4.68 3.8-8.5 8.5-8.5 2.27 0 4.35.9 5.9 2.36A8.4 8.4 0 0120.5 12c0 4.68-3.8 8.51-8.5 8.51"/></svg>
+            <a href="https://wa.me/5588999713494" target="_blank" rel="noopener noreferrer">(88) 99971-3494</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Carnaubal, Ceará, Brasil</span>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a href="https://www.linkedin.com/in/osmar-sampaio/" target="_blank" rel="noopener noreferrer">linkedin.com/in/osmar-sampaio</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.332-1.755-1.332-1.755-1.087-.744.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.775.42-1.305.763-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.604-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/osmarsampaio" target="_blank" rel="noopener noreferrer">github.com/osmarsampaio</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Resumo Profissional</h2>
+        <p>Desenvolvedor Full Stack apaixonado por criar soluções tecnológicas inovadoras. Com experiência em desenvolvimento web, tenho habilidades tanto no frontend quanto no backend, permitindo-me criar aplicações completas e eficientes. Sou proativo, autodidata e sempre em busca de novos desafios e aprendizados.</p>
+      </section>
+
+      <section>
+        <h2>Experiência Profissional</h2>
+        
+        <div class="experience-item">
+          <h3>Desenvolvedor Full Stack Freelancer</h3>
+          <p class="date">2022 - Atual</p>
+          <ul>
+            <li>Desenvolvimento de sites e sistemas web personalizados</li>
+            <li>Criação de aplicações responsivas e otimizadas</li>
+            <li>Integração com APIs e bancos de dados</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <h3>Projetos Pessoais</h3>
+          <p class="date">2021 - Atual</p>
+          <ul>
+            <li>OsmarAds - Plataforma de gerenciamento de anúncios para outdoors digitais</li>
+            <li>Hidelgás - Site para venda de gás e água com pedidos via WhatsApp</li>
+            <li>BritoCell - Loja virtual de iPhones</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Formação Acadêmica</h2>
+        
+        <div class="education-item">
+          <h3>Engenharia de Software</h3>
+          <p class="date">Cursando</p>
+          <p>UNICESUMAR - Ensino a Distância</p>
+        </div>
+        
+        <div class="education-item">
+          <h3>Cursos Complementares</h3>
+          <ul>
+            <li>HTML, CSS e JavaScript - Curso em Vídeo</li>
+            <li>Python - Curso em Vídeo</li>
+            <li>Java Básico - Curso em Vídeo</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Habilidades Técnicas</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h4>Frontend</h4>
+            <div class="skills-tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Responsive Design</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Backend</h4>
+            <div class="skills-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">RESTful APIs</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Banco de Dados</h4>
+            <div class="skills-tags">
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Mongoose</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Outras Tecnologias</h4>
+            <div class="skills-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Heroku</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Idiomas</h2>
+        <div class="languages">
+          <div class="language">
+            <span>Português</span>
+            <div class="progress-bar">
+              <div class="progress portuguese"></div>
+            </div>
+            <span>Nativo</span>
+          </div>
+          <div class="language">
+            <span>Inglês</span>
+            <div class="progress-bar">
+              <div class="progress english"></div>
+            </div>
+            <span>Estudando para fluência</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <button onclick="window.print()" class="print-button">
+    Imprimir Currículo
+  </button>
+  
+  <script>
+    // Adiciona a data atual ao rodapé antes de imprimir
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('beforeprint', function() {
+        const date = new Date();
+        const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        const formattedDate = date.toLocaleDateString('pt-BR', options);
+        
+        const footer = document.createElement('footer');
+        footer.style.position = 'fixed';
+        footer.style.bottom = '10px';
+        footer.style.right = '20px';
+        footer.style.fontSize = '10px';
+        footer.style.color = '#666';
+        footer.textContent = `Atualizado em: ${formattedDate}`;
+        
+        document.body.appendChild(footer);
+      });
+    });
+  </script>
+</body>
+</html>
